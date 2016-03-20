@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class EnglishPracticeApplication {
 
+//	private static final Logger log = LoggerFactory.getLogger(EnglishPracticeApplication.class);
+
+	
 	@RequestMapping("/")
 	public String home() {
 		return "Welcome  in our Home!";
@@ -17,4 +20,5 @@ public class EnglishPracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EnglishPracticeApplication.class, args);
 	}
+	
 }

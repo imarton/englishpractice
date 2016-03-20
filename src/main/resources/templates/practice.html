@@ -16,18 +16,20 @@
 </head>
 <body ng-controller="practiceController as pc">
 	<h1>Szavak ismétlése</h1>
-	<div><input type="text" ng-model="neved" placeholder="Kérlek írd be a neved:" />
-	<br/>Hello {{neved}}! 
-	<br/>Tudod-e a következő szó angol/magyar megfelelőjét?</div>
-	<hr/>
-	<form action="#"  >
-		<div>Magyar:<input type="text" ng-model="hungarian" /> </div>
-		<div>Angol: <input type="text" ng-model="english" /></div>
-		<div ng-show="message"><label>{{message}}</label> <br /></div>
-		<button ng-click="checkAnswer()">Mehet</button>
-		<button ng-show="isCorrect == false" ng-click="showRightAnswer()">Mutasd a megoldást</button>
-		<button ng-click="nextQuestion()">Következő</button>
-	</form>
-	<hr/>
+	<div ng-hide="isStarted"><button ng-click="start()">Kezdés</button></div>
+	<div ng-show="isStarted">
+		<div>{{qIndex+1}}. kérdés:</div>
+		<hr/>
+		<div>Tudod-e a következő szó angol/magyar megfelelőjét?</div>
+		<form action="#"  >
+			<div>{{question}}</div>
+			<div><input type="text" ng-model="answer" /></div>
+			<div ng-show="message"><label>{{message}}</label> <br /></div>
+			<button ng-click="checkAnswer()">Mehet</button>
+			<button ng-show="isCorrect == false" ng-click="showRightAnswer()">Mutasd a megoldást</button>
+			<button ng-click="nextQuestion()">Következő</button>
+		</form>
+		<hr/>
+	</div>
 </body>
 </html>
