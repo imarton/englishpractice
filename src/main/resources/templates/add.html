@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="practiceApp3" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+
+<!-- script src="/assist/js/angular.js"></script>
+<script src="/assist/js/angular-animate.js"></script>
+<script src="/assist/js/angular-route.js"></script  -->
+
+<script type="text/javascript" src="/assist/js/app.js"></script>
+<title>Szó gyakorló</title>
+</head>
+<body ng-controller="addController as pc">
+	<h1>Új szó felvétele</h1>
+	<div>légy pontos az új szavak beírásakor!</div>
+	<hr/>
+	<form action="#"  >
+		<div>Magyar:<input type="text" ng-model="hungarian" /> </div>
+		<div>Angol: <input type="text" ng-model="english" /></div>
+		<div ng-show="message"><label>{{message}}</label> <br /></div>
+		<button ng-click="save()">Mentés</button>	
+		
+	</form>
+	<hr/>
+</body>
+</html>
